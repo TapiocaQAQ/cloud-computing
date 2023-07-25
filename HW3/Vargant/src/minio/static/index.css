@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+h3{
+    display: flex;
+    background-color:#5690ca;
+    height:30px;
+    width:100px;
+    float:left;
+}
+h2,p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 34px;
+    color: red;
+    display: none;
+}
+#input_name{
+    position:absolute;
+    left:580px;
+    width:40px;
+    height: 35px;
+    border: 1.8px solid #69F;
+    color: #69F;
+    border-radius: 6px;
+    letter-spacing: .1em;
+    background-color: transparent;
+    cursor: pointer;
+}
+#start_game{
+    position:absolute;
+    left:350px;
+    top: 250px;
+    width: 100px;
+    height: 50px;
+    border: 1.8px solid #69F;
+    color: #69F;
+    border-radius: 6px;
+    letter-spacing: .1em;
+    background-color: transparent;
+    cursor: pointer;
+}
+#clear_board{
+    position:absolute;
+    left:630px;
+    width:40px;
+    height: 35px;
+    border: 1.8px solid #69F;
+    color: #69F;
+    border-radius: 6px;
+    letter-spacing: .1em;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+#scoreBoard {
+    background-color: pink;
+    width:120px;
+    height:200px;
+    float:right;
+}
+#user_name{
+    position:absolute;
+    left:160px;
+    width:400px;
+}
+
+#resume {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    border: 1.8px solid #69F;
+    color: #69F;
+    border-radius: 6px;
+    letter-spacing: .1em;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: none;
+}
+
+#game {
+    width: 800px;
+    height: 500px;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+}
+
+.role {
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+}
+
+.tree {
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    animation: stop 1s infinite;
+}
+
+.animate {
+    animation: jump 500ms infinite;
+}
+
+@keyframes stop {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: 830px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    30% {
+        bottom: 75px;
+    }
+
+    70% {
+        bottom: 75px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}

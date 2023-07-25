@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  Front:
+    container_name: Front
+    depends_on:
+      - Backend
+      - Minio
+    image: tapiocaqaq/front2
+    ports:
+      - "8080:5000"
+    networks:
+      static_network:
+        ipv4_address: 192.168.56.5
+  Backend:
+    container_name: Backend
+    depends_on:
+      - Mysql
+    image: tapiocaqaq/backend
+    ports:
+      - "8000:5000"
+    networks:
+      static_network:
+        ipv4_address: 192.168.56.3
+  Mysql:
+    container_name: Mysql
+    image: tapiocaqaq/mysql
+    networks:
+      static_network:
+        ipv4_address: 192.168.56.2
+  Minio:
+    container_name: Minio
+    image: tapiocaqaq/minio
+    ports:
+      - "7090:9090"
+      - "7000:9000"
+    networks:
+      static_network:
+        ipv4_address: 192.168.56.6
+
+networks:
+  static_network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 192.168.56.0/24
